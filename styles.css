@@ -1,0 +1,13 @@
+body {
+  background-color: grey;
+  margin: 0;
+  overflow: hidden;
+}
+
+#main {
+  line-height: 0;
+  position: absolute;
+}
+
+img {
+}
