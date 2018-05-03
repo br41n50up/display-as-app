@@ -3,14 +3,36 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Titel</title>
+    <title>Display As App</title>
+    <script type="text/javascript" src="./URI.js">
+    </script>
     <script type="text/javascript">
-      function loadApp() {
-        window.open('app.html', '_blank', 'location=no,menubar=no,status=no,resizable=yes');
-        window.close();
+      <!--
+      function realClose() {
+        var win=window.open("","_top","","true");
+        win.opener=true;
+        //win.close();
+        win.realclosefunc();
       }
+      window.realclosefunc = window.close;
+      window.close = realClose;
+
+      function loadApp() {
+        var url = new URI(window.location.href);
+        var target = url.search(true)["target"];
+        var width = parseInt(url.search(true)["width"]) - 4;
+        var height = parseInt(url.search(true)["height"]) - 4;
+
+        if (target && width && height) {
+          window.open(target, "_blank", "location=no,menubar=no,status=no,resizable=yes,width=" + width + ",height=" + height );
+          window.realClose();
+        }
+      }
+      -->
     </script>
   </head>
   <body onload="loadApp()">
+    This page opens a pop-up window.
+    <noscript>Please allow JavaScript to open this app.</noscript>
   </body>
 </html>
